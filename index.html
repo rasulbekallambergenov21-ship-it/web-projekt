@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mening Portfolim</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Umumiy sozlamalar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #0d1117;
+            color: #c9d1d9;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigatsiya */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(13, 17, 23, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #30363d;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #58a6ff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #58a6ff;
+        }
+
+        /* Hero Bo'limi */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #58a6ff;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 25px;
+            color: #8b949e;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #238636;
+            color: #ffffff;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2ea043;
+        }
+
+        /* Bo'limlar umumiy */
+        section {
+            padding: 100px 0 60px;
+        }
+
+        section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #ffffff;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #58a6ff;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Men haqimda va Ko'nikmalar */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #8b949e;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-tag {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #58a6ff;
+        }
+
+        /* Loyihalar */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 8px;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: #58a6ff;
+        }
+
+        .project-card h3 {
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            color: #8b949e;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: #58a6ff;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Bog'lanish */
+        .contact {
+            text-align: center;
+        }
+
+        .contact p {
+            color: #8b949e;
+            margin-bottom: 25px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+        }
+
+        .social-icons a {
+            color: #8b949e;
+            transition: color 0.3s;
+        }
+
+        .social-icons a:hover {
+            color: #58a6ff;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #30363d;
+            color: #8b949e;
+            font-size: 0.9rem;
+        }
+
+        /* Mobil moslashuvchanlik (Responsive) */
+        @media (max-width: 768px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .nav-links {
+                display: none; /* Oddiy dizayn uchun mobil menyuni yashiramiz yoki JS qo'shish mumkin */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">Portfolio.</div>
+                <ul class="nav-links">
+                    <li><a href="#about">Men haqimda</a></li>
+                    <li><a href="#projects">Loyihalar</a></li>
+                    <li><a href="#contact">Bog'lanish</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Bo'limi -->
+    <section class="hero">
+        <div class="container">
+            <h1>Salom, men <span>Ismingiz</span></h1>
+            <p>Frontend Dasturchi / Veb-dizayner. Raqamli olamda foydalanuvchilar uchun qulay va zamonaviy veb-ilovalar yarataman.</p>
+            <a href="#contact" class="btn">Bog'lanish</a>
+        </div>
+    </section>
+
+    <!-- Men haqimda -->
+    <section id="about" class="container">
+        <h2>Men haqimda</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Men veb-dasturlash yo'nalishida tajribaga ega bo'lgan dasturchiman. Asosiy maqsadim — kodlar orqali chiroyli, tez ishlaydigan va foydalanuvchiga qulay interfeyslarni yaratish.</p>
+                <p>Doimiy ravishda o'z ustimda ishlab, yangi texnologiyalarni o'rganib boraman.</p>
+            </div>
+            <div class="skills-grid">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript</span>
+                <span class="skill-tag">React.js</span>
+                <span class="skill-tag">Tailwind CSS</span>
+                <span class="skill-tag">Git & GitHub</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loyihalar -->
+    <section id="projects" class="container">
+        <h2>Loyihalarim</h2>
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>E-commerce Veb-sayti</h3>
+                <p>Foydalanuvchilarga mahsulotlarni tanlash va savatga qo'shish imkoniyatini beruvchi internet-do'kon loyihasi.</p>
+                <a href="#" class="project-link">Ko'rish <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card">
+                <h3>Ob-havo ilovasi</h3>
+                <p>API yordamida istalgan shaharning joriy ob-havo ma'lumotlarini ko'rsatib beruvchi veb-ilova.</p>
+                <a href="#" class="project-link">Ko'rish <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="project-card">
+                <h3>Landing Page</h3>
+                <p>Kompaniya yoki shaxsiy brend uchun tayyorlangan zamonaviy va responsiv tanishtiruv sahifasi.</p>
+                <a href="#" class="project-link">Ko'rish <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bog'lanish -->
+    <section id="contact" class="container contact">
+        <h2>Bog'lanish</h2>
+        <p>Meni quyidagi tarmoqlar orqali topishingiz va o'z takliflaringizni yuborishingiz mumkin:</p>
+        <div class="social-icons">
+            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://telegram.org" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <a href="mailto:email@example.com" class="btn">Email yuborish</a>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Barcha huquqlar himoyalangan.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
